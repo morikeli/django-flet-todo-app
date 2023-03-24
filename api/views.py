@@ -11,3 +11,9 @@ class AddTasksView(APIView):
 
         return Response(serializer.data)
 
+    def post(self, request):
+        serializer = TasksSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
