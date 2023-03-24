@@ -6,11 +6,11 @@ input_field = ft.TextField(hint_text='Add task ...')
 def main(page: ft.Page):
     def get(e):
         api_request = requests.get('http://127.0.0.1:8000/app/').json()
-        # page.add(ft.Text([api_request[task]['task']for task in range(len(api_request))]))
+        
         for tasks in range(len(api_request)):
             page.add(ft.Text(api_request[tasks]['task']))
-            print(f'Tasks: {api_request[tasks+1],api_request[tasks]["task"]}')
-        # page.update()
+            
+        page.update()
 
     def post(e):
         requests.post('http://127.0.0.1:8000/app/', data={'task': str(input_field.value)})
