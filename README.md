@@ -8,7 +8,7 @@ Technologies used:
   - django REST Framework
   - Flet
   
-#### For more info about Flet, click here ![What is Flet?](https:flet.dev)
+For more info about Flet, click this ![link](https:flet.dev)
 
 ## Developer instructions
 1. Open terminal and clone this repo using Git.
